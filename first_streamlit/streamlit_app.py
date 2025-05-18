@@ -1,27 +1,21 @@
 import streamlit as st
-import multipage_streamlit as mt
-from pages import cir, hist, profile, rec
-
-app = mt.MultiPage()
-app.add("Profile", profile.run)
-app.add("Circle calculation", cir.run)
-app.add("Rectangular calculation", rec.run)
-app.add("Histrogram", hist.run)
-
-style = st.sidebar.radio("MultiPage style:", app.styles,
-    help="Choose the style of the multipage app")
-
-app.run(style)
+import pandas as pd
+import numpy as np
 
 # Define the pages
-# main_page = st.Page("pages/profile.py", title="Main Page", icon="🎈")
-# page_2 = st.Page("pages/1_cal_cir_250518.py", title="Circle", icon="❄️")
-# page_3 = st.Page("pages/2_cal_regtang_250518.py", title="Rectangular", icon="🎉")
-# histrogram = st.Page("pages/Histogram.py", title="Histrogram", icon="🎈")
+profile = st.Page("pages/profile.py", title="Index", icon="👋") 
+page_2 = st.Page("pages/cir.py", title="Circle", icon="❄️")
+page_3 = st.Page("pages/rec.py", title="Rectangular", icon="🎉")
+page_4 = st.Page("pages/chat.py", title="Chatbot", icon= "🤖")
+page_5 = st.Page("pages/Bangkok.py", title="Bangkok", icon= "🌍")
+
 
 
 # Set up navigation
-pg = st.navigation([main_page, page_2, page_3,histrogram])
+pg = st.navigation([profile, page_2, page_3, page_4, page_5])
 
 # Run the selected page
 pg.run()
+    
+st.sidebar.title(f"**👋 Hello :rainbow[{st.session_state.profile_data['name']}]**")
+st.sidebar.image(st.session_state.profile_picture, caption="Profile Picture")
