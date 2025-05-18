@@ -1,0 +1,2 @@
+- using Roo code as generative AI by selected AI API e.g. gemini.
+- Prompt your request into roo code.
