@@ -1,0 +1,10 @@
+1. Ask AI: Create PFD (product requirement document) for this app above.
+Technology used.
+Steamlit
+PostgreSQL
+2. Start to use AI agent
+from UI
+Datamodel
+application logic
+3. Vertical slice
+start over from UI
